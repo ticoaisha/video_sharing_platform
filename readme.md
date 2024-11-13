@@ -4,7 +4,7 @@ Designing and comparing different architectures for a simplified video-sharing p
 
 We will be focusing on describing key features of the CloudView, along with the highlighting the architectural specifics of the design and focusing on scalability, resiliency, and latency. 
 
-![Design video sharing platfrom](/video_sharing_platform/images/1_design_video_sharing_platform.png)
+![Design video sharing platfrom](/images/1_design_video_sharing_platform.png)
 
 **1. Video upload and storage** -> user will be able to upload videos in a high-resolution format via a web or mobile interface directly to **Amazon S3** via a pre-signed URL. This reduces load on backend servers.
 
