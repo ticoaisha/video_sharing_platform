@@ -1,10 +1,10 @@
 # Design Video Sharing Platform "CloudView"
 
-Designing and comparing different architectures for a simplified video-sharing platform (we gave it name "CloudView") is an important project for several reasons, especially in the cloud engineering and solutions architecture. It will provide opportunity to apply theoretical knowledge about system design, cloud services, and software architecture to a practical, real-world scenario, lead engineers to weigh the pros and cons of different architectural choices (e.g., traditional server-based vs. serverless architectures) in terms of cost, scalability, complexity, and resilience.
+Designing and comparing different architectures for a simplified video-sharing platform (we gave it name "CloudView") is an important project for several reasons, especially in the cloud engineering and solutions architecture. It will provide opportunity to apply theoretical knowledge about system design, cloud services, and software architecture to a practical, real-world scenarios, lead engineers to weigh the pros and cons of different architectural choices (e.g., traditional server-based vs. serverless architectures) in terms of cost, scalability, complexity, and resilience.
 
 We will be focusing on describing key features of the CloudView, along with the highlighting the architectural specifics of the design and focusing on scalability, resiliency, and latency. 
 
-![Design video sharing platfrom](/video_sharing_platform/images/1_design_video_sharing_platform.png)
+![Design video sharing platfrom](images/1_design_video_sharing_platform.png)
 
 **1. Video upload and storage** -> user will be able to upload videos in a high-resolution format via a web or mobile interface directly to **Amazon S3** via a pre-signed URL. This reduces load on backend servers.
 
@@ -17,7 +17,7 @@ Why is NoSQL -> Metadata typically includes semi-structured data that may evolve
 **3. Video processing** -> will involve the following steps:
 1. Upon upload, a message is sent to an **Amazon SQS queue** to trigger video processing.
 2. **AWS Lambda functions** or an **AWS Fargate / ECS service** can be used to transcode videos into multiple resolutions (e.g., 1080p, 720p, 480p). Multiple Lambda functions can operate concurrently for efficient transcoding.
-3. Transcoded videos are saved in different **S3** buckets/folders for easy retrieval based on user device and bandwidth.
+3. Transcoded videos are saved in different **S3** buckets / folders for easy retrieval based on user device and bandwidth.
 
 Why serverless -> automatically scale based on demand, cost-effective (pay-per-use model), and simplifies video processing workflows. At the same time, we should keep in mind that cold start latency can be a concern for real-time processing. AWS Fargate or ECS service can offer greater control if consistent performance is required. Failures can be retried using SQS dead-letter queues.
 
