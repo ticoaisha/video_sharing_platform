@@ -1,4 +1,4 @@
-# Design Video Sharing Platform "CloudView"
+# Design Video Sharing Platform Architecture
 
 Designing and comparing different architectures for a simplified video-sharing platform (we gave it name "CloudView") is an important project for several reasons, especially in the cloud engineering and solutions architecture. It will provide opportunity to apply theoretical knowledge about system design, cloud services, and software architecture to a practical, real-world scenarios, lead engineers to weigh the pros and cons of different architectural choices (e.g., traditional server-based vs. serverless architectures) in terms of cost, scalability, complexity, and resilience.
 
